@@ -1,17 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./style.css";
+// const name = "Chynarbek"
+// const age = 15
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const Header = () => {
+    return (
+        <div id="myDIV" className="header">
+            <h2>My To Do List</h2>
+            <input type="text" id="myInput" placeholder="Title..." />
+            <span  className="addBtn">Add</span>
+        </div>
+    )
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+const Body = () => {
+  return  (<ul id="myUL">
+  <li>Hit the gym</li>
+  <li className="checked">Pay bills</li>
+  <li>Meet George</li>
+  <li>Buy eggs</li>
+  <li>Read a book</li>
+  <li>Organize office</li>
+</ul>)
+}
+
+
+const App = () => {
+  return (
+    <div>
+        <Header/>
+        <Body/>
+    </div>
+  );
+};
+
+ReactDOM.render(<App/>, document.querySelector("#root"));
